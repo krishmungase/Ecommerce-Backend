@@ -4,7 +4,7 @@ const ProductReviewSchema = new mongoose.Schema({
   userId: String,
   userName: String,
   reviewMessage: String,
-  review: Number,
+  reviewValue: Number,
 }, { timestamps: true })
 
 module.exports = mongoose.model('ProductReview', ProductReviewSchema);

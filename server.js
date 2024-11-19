@@ -8,6 +8,7 @@ const shopProductRoute = require('./routes/shop/productRoutes')
 const shopCartRoute = require('./routes/shop/cartRoutes')
 const shopAddressRoute = require('./routes/shop/addressRoute')
 const shopSearchRoute = require('./routes/shop/searchRoute')
+const shopReviewRoute = require('./routes/shop/reviewRoute')
 
 connect();
 
@@ -41,6 +42,7 @@ app.use('/api/shop/products', shopProductRoute)
 app.use('/api/shop/cart', shopCartRoute);
 app.use('/api/shop/address', shopAddressRoute);
 app.use('/api/shop/search', shopSearchRoute);
+app.use('/api/shop/review', shopReviewRoute);
 
 
 app.listen(PORT, () => {
