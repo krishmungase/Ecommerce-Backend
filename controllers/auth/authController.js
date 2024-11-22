@@ -1,6 +1,7 @@
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../../models/UserModel");
+require("dotenv").config();
 
 // Register
 const register = async (req, res) => {
@@ -59,7 +60,7 @@ const login = async (req, res) => {
       });
     }
     const payLoad = { id: user._id, userName: user.userName, email: user.email, role: user.role };
-    const token = jwt.sign(payLoad, "KRISH", { expiresIn: "1h" });
+    const token = jwt.sign(payLoad, process.env.JWT_SECRET, { expiresIn: "1h" });
 
     res.cookie("token", token, { httpOnly: true, secure: false }).json({
       success: true,

@@ -9,11 +9,12 @@ const shopCartRoute = require('./routes/shop/cartRoutes')
 const shopAddressRoute = require('./routes/shop/addressRoute')
 const shopSearchRoute = require('./routes/shop/searchRoute')
 const shopReviewRoute = require('./routes/shop/reviewRoute')
+require("dotenv").config();
 
 connect();
 
 const app = express();
-const PORT = 5515;
+const APP_PORT = process.env.PORT || 5515;
 
 
 app.use(
@@ -45,7 +46,7 @@ app.use('/api/shop/search', shopSearchRoute);
 app.use('/api/shop/review', shopReviewRoute);
 
 
-app.listen(PORT, () => {
-  console.log(`Server is listening on ${PORT}`)
+app.listen(APP_PORT, () => {
+  console.log(`Server is listening on ${APP_PORT}`)
 })
 
