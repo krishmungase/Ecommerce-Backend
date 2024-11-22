@@ -14,7 +14,7 @@ require("dotenv").config();
 connect();
 
 const app = express();
-const APP_PORT = process.env.PORT || 5515;
+const PORT = process.env.PORT || 5515;
 
 
 app.use(
@@ -46,7 +46,7 @@ app.use('/api/shop/search', shopSearchRoute);
 app.use('/api/shop/review', shopReviewRoute);
 
 
-app.listen(APP_PORT, () => {
-  console.log(`Server is listening on ${APP_PORT}`)
+app.listen(PORT, () => {
+  console.log(`Server is listening on ${PORT}`)
 })
 
