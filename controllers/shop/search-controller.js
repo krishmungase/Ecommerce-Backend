@@ -1,5 +1,3 @@
-
-const { message } = require('antd');
 const Product = require('../../models/ProductModel')
 
 
